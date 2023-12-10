@@ -58,21 +58,25 @@ def characterCreation():
     age = input(f"Choose {characterName}'s age: ")
     print(f"{characterName} is {age} years old.")
     
-
-    trait = input("Choose your character's trait.  \n 1. Courageous \n 2. Talented \n" )
-    if trait == "1":
-        print(f"{characterName} is Courageous at heart!")
-    else:
-        print(f"Destiny blessed {characterName} with Talent!")
+traits = {
+        "1": "Courageous at heart",
+        "2": "Blessed with Talent"
+        }   
+    while True:
+        
+        trait = input("Choose your character's trait.  \n 1. Courageous \n 2. Talented \n" )
+        if trait in traits:
+            print(f"{characterName} is {traits[trait]}!")
+            break
+        else:
+            print("Please select one of the options")
     
-    
-
     #Character info
     print("\nCharacter Created!")
     print(f"Name: {characterName}")
     print(f"Gender: {gender}")
     print(f"Age: {age}")
-    print(f"Trait: {trait}")
+    print(f"Trait: {traits[trait]}")
     
 def actOnePartOne():
     
