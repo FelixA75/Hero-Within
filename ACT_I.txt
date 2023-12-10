@@ -12,8 +12,11 @@ As you explore the dungeon, you find a rusty key and a worn-out map. Unlocking t
 
 end2
 
+start3
+
 After a challenging encounter with goblin guards, you stumble upon an ancient chamber with a mysterious portal. A spectral figure appears, revealing your destiny and the looming darkness threatening the land. A choice awaits you: continue exploring the dungeon for valuable items or embark on the quest foretold by destiny.
 
+end3
 
 Player Choice:
 1.	Continue Exploring - If chosen, proceed to Act II with your party collecting additional loot and information.

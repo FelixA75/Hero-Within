@@ -134,8 +134,29 @@ def actOnePartTwo():
 
         print(content) 
 
+def actOnePartThree():
+    
+    filename = "ACT_I.txt"
+    start = "start3"
+    end = "end3"
+    
+    with open(filename, 'r') as file:
+        content = ""
+        
+        foundWord = False
+        
+        for line in file:
+            if line.startswith(start):
+                foundWord = True
+                continue
+            
+            if foundWord:
+                if line.startswith(end):
+                    foundWord = False
+                else:
+                    content += line
 
-
+        print(content) 
 
 def gameOver(actOneChoiceOne):
     print("You have lost")
@@ -152,7 +173,7 @@ def main():
     titleScreen(characterCreation)
     actOnePartOne()
     actOneChoiceOne(gameOver,actOnePartTwo)
-    
+    actOnePartThree()
 
 main()
 
