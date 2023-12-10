@@ -158,6 +158,83 @@ def actOnePartThree():
 
         print(content) 
 
+
+
+def battleSim(characterCreation,d20Roll):
+    filename = "ACT_I.txt"
+    start = "BatStart1"
+    end = "BatEnd1"
+    
+    with open(filename, 'r') as file:
+        content = ""
+        
+        foundWord = False
+        
+        for line in file:
+            if line.startswith(start):
+                foundWord = True
+                continue
+            
+            if foundWord:
+                if line.startswith(end):
+                    foundWord = False
+                else:
+                    content += line
+
+        print(content)
+    
+    Health = 100
+    ATK = 75
+    playerStat = 5
+
+    gobHealth = 150
+    gobATK = 50
+
+    player = characterCreation
+
+    print("The head Goblin Guard has 150 health points. \nWhat would you like to do? \n1. Attack \n2. Run \n3. Check your stats")
+
+    while gobHealth > 0:
+    
+        userInput = input()
+        if userInput == "1":
+            while gobHealth > 0:
+                print("You must roll an 11 for your attack to hit")
+                dice = d20Roll()
+                print(f"You rolled a: {dice}")
+                
+                if (dice + playerStat) >= 11:
+                    print("Direct hit!")
+                    gobHealth -= ATK
+                    print(f"The Goblin's health is now {gobHealth}")
+                    
+                else:
+                    print("Miss! The Goblin retaliates.")
+                    Health -= gobATK
+                    print(f"Your health is now {Health}")
+
+                print("What would you like to do next? \n1. Continue attacking \n2. Run \n3. Check your stats")
+                nextChoice = input()
+
+                if nextChoice == "2":
+                    print("You were killed by the Goblin Guard! \n")
+                    battleSim(characterCreation,d20Roll)
+                    
+                elif nextChoice == "3":
+                    print(f"Your stats:\nHealth: {Health}\nAttack: {ATK}\nPlayer Stat: {playerStat} \n")
+               
+            
+        elif userInput == "2":
+            print("You were killed by the Goblin Guard! \n")
+            battleSim(characterCreation,d20Roll)
+
+        elif userInput == "3":
+            print(f"Your stats:\nHealth: {Health}\nAttack: {ATK}\nPlayer Stat: {playerStat} \n")
+            battleSim(characterCreation,d20Roll)
+            
+        else:
+            print("Please select one of the options")
+
 def gameOver(actOneChoiceOne):
     print("You have lost")
     print("Continue? Y/N")
