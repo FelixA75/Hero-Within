@@ -90,16 +90,15 @@ def actOnePartOne():
         foundWord = False
         
         for line in file:
-            if start in line:
+            if line.startswith(start):
                 foundWord = True
                 continue
             
             if foundWord:
-                content += line
-                            
-            if end in line:          #Having trouble getting code to not print "end1"
-                 foundWord = True
-                 break
+                if line.startswith(end):
+                    foundWord = False
+                else:
+                    content += line
 
         print(content)
     
@@ -123,16 +122,15 @@ def actOnePartTwo():
         foundWord = False
         
         for line in file:
-            if start in line:
+            if line.startswith(start):
                 foundWord = True
                 continue
             
             if foundWord:
-                content += line
-                            
-            if end in line:           #Having trouble getting code to not print "end2"
-                 foundWord = False
-                 break
+                if line.startswith(end):
+                    foundWord = False
+                else:
+                    content += line
 
         print(content) 
 
