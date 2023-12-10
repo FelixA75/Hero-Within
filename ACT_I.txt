@@ -1,23 +1,23 @@
 Act I: The Awakening
 
 start1
-
 You wake up in a dimly lit, damp dungeon cell. The air is thick with the stench of mildew, and the distant echoes of clinking chains and guttural growls fill your ears. Clad in simple, tattered clothes, you recall only fragments of your past – a distant battle, a mysterious artifact, and an ancient prophecy. You notice that the barred door on your cell has been broken open.
-
 end1
 
+
 start2
-
 As you explore the dungeon, you find a rusty key and a worn-out map. Unlocking the cell door, you discover a group of fellow prisoners, each with their reasons for escape. Among them are Kael, a grizzled warrior, Lyra, a sly rogue, and Elara, a wise mage. Together, you form a makeshift party, gathering supplies and weapons from fallen foes.
-
 end2
 
+BatStart1
+Armed with the newfound weapons, the group braced for an imminent clash with the goblin guards who were blocking their path to freedom or captivity. 
+BatEnd1
+
 start3
-
 After a challenging encounter with goblin guards, you stumble upon an ancient chamber with a mysterious portal. A spectral figure appears, revealing your destiny and the looming darkness threatening the land. A choice awaits you: continue exploring the dungeon for valuable items or embark on the quest foretold by destiny.
-
 end3
 
 Player Choice:
 1.	Continue Exploring - If chosen, proceed to Act II with your party collecting additional loot and information.
 2.	Embark on the Quest - If chosen, proceed to Act II, beginning your journey.
+
