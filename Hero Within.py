@@ -143,9 +143,9 @@ def gameOver(actOneChoiceOne):
     
     userInput = input()
     
-    if userInput == ("N" or "n"):
+    if userInput.lower() == "n":
         exit()        
-    if userInput == ("Y" or "y"):
+    if userInput.lower() == "y":
         actOneChoiceOne(gameOver,actOnePartTwo)
 def main():
     button()
