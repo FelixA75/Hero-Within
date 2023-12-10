@@ -58,7 +58,7 @@ def characterCreation():
     age = input(f"Choose {characterName}'s age: ")
     print(f"{characterName} is {age} years old.")
     
-traits = {
+    traits = {
         "1": "Courageous at heart",
         "2": "Blessed with Talent"
         }   
