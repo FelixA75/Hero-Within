@@ -106,7 +106,7 @@ def actOneChoiceOne(gameOver,actOnePartTwo):
     print("What would you like to do? \n 1. Stay where you are. \n 2. Take your chances and escape ")
     userInput = input()
     if userInput == ("1"):
-        gameOver(actOneChoiceOne, actOnePartTwo)        
+        gameOver(actOneChoiceOne)        
     if userInput == ("2"):
         actOnePartTwo()
 
@@ -143,10 +143,10 @@ def gameOver(actOneChoiceOne):
     
     userInput = input()
     
-    if userInput == ("N"):
+    if userInput == ("N" or "n"):
         exit()        
-    if userInput == ("Y"):
-        actOneChoiceOne()
+    if userInput == ("Y" or "y"):
+        actOneChoiceOne(gameOver,actOnePartTwo)
 def main():
     button()
     titleScreen(characterCreation)
