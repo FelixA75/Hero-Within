@@ -1,6 +1,27 @@
 import random
+from tkinter import *
 
-
+def button():
+    
+    count = 0
+    window = Tk()
+    button = Button(window,text='Start Adventure')
+    button.config(command=lambda: titleScreen(characterCreation))
+    
+    button.config(font=('Magneto',50,'bold'))
+    button.config(bg='#081f83')
+    button.config(fg='#fa5a13')
+    
+    button.config(activebackground='#fa5a13')
+    button.config(activeforeground='#081f83')
+    
+    image = PhotoImage(file='shenron.png')
+    button.config(image=image)
+    button.config(compound='top')
+    button.pack()
+    label2 = Label(window,image=image)
+    window.mainloop()
+    
 def d20Roll():
     return random.randint(1, 20)
 
@@ -125,12 +146,13 @@ def gameOver(actOneChoiceOne):
     if userInput == ("Y"):
         actOneChoiceOne()
 def main():
-    
+    button()
     titleScreen(characterCreation)
     actOnePartOne()
     actOneChoiceOne(gameOver,actOnePartTwo)
     
 
 main()
+
 
 
