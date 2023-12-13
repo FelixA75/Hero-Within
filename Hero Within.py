@@ -1,12 +1,20 @@
 import random
 from tkinter import *
 
+window = None
+
+def destroyWindow():
+        window.destroy()
+        actOnePartOne()
+
 def button():
+    
+    global window
     
     count = 0
     window = Tk()
     button = Button(window,text='Start Adventure')
-    button.config(command=lambda: titleScreen(characterCreation))
+    button.config(command=lambda: [titleScreen(characterCreation), window.after(2000, destroyWindow)])
     
     button.config(font=('Magneto',50,'bold'))
     button.config(bg='#081f83')
@@ -247,12 +255,8 @@ def gameOver(actOneChoiceOne):
         actOneChoiceOne(gameOver,actOnePartTwo)
 def main():
     button()
-    titleScreen(characterCreation)
-    actOnePartOne()
     actOneChoiceOne(gameOver,actOnePartTwo)
+    battleSim(characterCreation,d20Roll)
     actOnePartThree()
 
 main()
-
-
-
